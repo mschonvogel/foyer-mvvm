@@ -1,0 +1,14 @@
+# MacOS X
+*.DS_Store
+
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.xcuserstate
+*.xcuserdatad
+*.xccheckout
+*.xcscmblueprint
+xcuserdata/
+profile
+DerivedData
