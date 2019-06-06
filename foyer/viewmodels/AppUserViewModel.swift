@@ -6,7 +6,8 @@ import RxOptional
 
 func appUserViewModel(
     disposeBag: DisposeBag,
-    viewDidLoad: Observable<Void>
+    viewDidLoad: Observable<Void>,
+    itemSelected: Observable<IndexPath>
     ) -> (
     user: Observable<UserContract?>,
     stories: Observable<[Story]>,
@@ -23,6 +24,14 @@ func appUserViewModel(
                 showError.onNext(error.localizedDescription)
             }
         }
+        itemSelected
+            .withLatestFrom(storiesPublish) { (indexPath, stories) -> Story in
+                stories[indexPath.item]
+            }
+            .bind { story in
+                Environment.shared.router.presentStory(story)
+            }
+            .disposed(by: disposeBag)
 
         return (
             user: Environment.shared.user.map { $0 },

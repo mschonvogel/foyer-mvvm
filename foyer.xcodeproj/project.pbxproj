@@ -43,6 +43,8 @@
 		E94DA66022A028F100050EC2 /* ParallaxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA65F22A028F100050EC2 /* ParallaxFlowLayout.swift */; };
 		E94DA66222A164CD00050EC2 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA66122A164CD00050EC2 /* NSAttributedString+Extensions.swift */; };
 		E94DA66422A7D5F600050EC2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA66322A7D5F600050EC2 /* String+Extensions.swift */; };
+		E94DA66622A914D200050EC2 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA66522A914D200050EC2 /* Styles.swift */; };
+		E94DA66822A9176000050EC2 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA66722A9176000050EC2 /* Operators.swift */; };
 		E95867A5228D9FA600F9FBF9 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95867A4228D9FA600F9FBF9 /* RootTabBarViewController.swift */; };
 		E95867A7228DA3A800F9FBF9 /* RootTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95867A6228DA3A800F9FBF9 /* RootTabBarViewModel.swift */; };
 		E95867AB228EB51100F9FBF9 /* RootTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95867AA228EB51100F9FBF9 /* RootTabBarViewModelTests.swift */; };
@@ -126,6 +128,8 @@
 		E94DA65F22A028F100050EC2 /* ParallaxFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxFlowLayout.swift; sourceTree = "<group>"; };
 		E94DA66122A164CD00050EC2 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		E94DA66322A7D5F600050EC2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E94DA66522A914D200050EC2 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		E94DA66722A9176000050EC2 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		E95867A4228D9FA600F9FBF9 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		E95867A6228DA3A800F9FBF9 /* RootTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModel.swift; sourceTree = "<group>"; };
 		E95867AA228EB51100F9FBF9 /* RootTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModelTests.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				E94DA60E22958A5B00050EC2 /* UIImage+Extensions.swift */,
 				E9473EAC2289C85500AA1CAB /* UIViewController+Extensions.swift */,
 				E94DA66322A7D5F600050EC2 /* String+Extensions.swift */,
+				E94DA66722A9176000050EC2 /* Operators.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 		E9A678292289A1300084A760 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				E94DA66522A914D200050EC2 /* Styles.swift */,
 				E94DA65E22A028C700050EC2 /* layouts */,
 				E94DA649229D3B9200050EC2 /* ProfileHeaderView.swift */,
 				E9A6782A2289A1300084A760 /* cells */,
@@ -647,10 +653,12 @@
 				E94DA63E229C064D00050EC2 /* Activity.swift in Sources */,
 				E9A678342289A1300084A760 /* FeedViewController.swift in Sources */,
 				E94DA64E229D417000050EC2 /* Int+Extensions.swift in Sources */,
+				E94DA66622A914D200050EC2 /* Styles.swift in Sources */,
 				E95867A7228DA3A800F9FBF9 /* RootTabBarViewModel.swift in Sources */,
 				E95867B42295490600F9FBF9 /* LoginRequestPayload.swift in Sources */,
 				E9A677BC228375C50084A760 /* Environment.swift in Sources */,
 				E94DA64A229D3B9200050EC2 /* ProfileHeaderView.swift in Sources */,
+				E94DA66822A9176000050EC2 /* Operators.swift in Sources */,
 				E9473EE0228B847D00AA1CAB /* User.swift in Sources */,
 				E94DA640229C27AC00050EC2 /* KeyValueStore.swift in Sources */,
 				E94489C1228C455D00E49887 /* LoginViewModel.swift in Sources */,

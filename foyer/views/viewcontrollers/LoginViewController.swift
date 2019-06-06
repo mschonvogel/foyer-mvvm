@@ -38,10 +38,10 @@ class LoginViewController: UIViewController {
             .bind(to: cancelButton.rx.isEnabled)
             .disposed(by: disposeBag)
         emailInputBorderColor
-            .bind(to: emailInput.rx.backgroundColor)
+            .bind { [weak self] in self?.emailInput.layer.borderColor = $0.cgColor }
             .disposed(by: disposeBag)
         passwordInputBorderColor
-            .bind(to: passwordInput.rx.backgroundColor)
+            .bind { [weak self] in self?.passwordInput.layer.borderColor = $0.cgColor }
             .disposed(by: disposeBag)
         showActivityIndicator
             .bind(to: activityIndicator.rx.isAnimating)
@@ -72,36 +72,21 @@ class LoginViewController: UIViewController {
         scrollView.addSubview(formContainer)
 
         emailLabel.text = "Email address"
-        emailLabel.font = .preferredFont(forTextStyle: .caption1)
-        emailLabel.numberOfLines = 0
+        textFieldLabelStyle(emailLabel)
         formContainer.addArrangedSubview(emailLabel)
 
-        emailInput.placeholder = "Email address"
-        emailInput.font = .preferredFont(forTextStyle: .body)
-        emailInput.keyboardType = .emailAddress
-        emailInput.autocorrectionType = .no
-        emailInput.autocapitalizationType = .none
-        emailInput.backgroundColor = .groupTableViewBackground
+        emailTextFieldStyle(emailInput)
         formContainer.addArrangedSubview(emailInput)
 
         passwordLabel.text = "Password"
-        passwordLabel.font = .preferredFont(forTextStyle: .caption1)
-        passwordLabel.numberOfLines = 0
+        textFieldLabelStyle(passwordLabel)
         formContainer.addArrangedSubview(passwordLabel)
 
-        passwordInput.placeholder = "Password"
-        passwordInput.font = .preferredFont(forTextStyle: .body)
-        passwordInput.backgroundColor = .groupTableViewBackground
-        passwordInput.isSecureTextEntry = true
+        passwordTextFieldStyle(passwordInput)
         formContainer.addArrangedSubview(passwordInput)
 
         submitButton.setTitle("Login", for: .normal)
-        submitButton.titleLabel?.font = .preferredFont(forTextStyle: .body)
-        submitButton.setBackgroundImage(UIImage(color: .blue), for: .normal)
-        submitButton.setBackgroundImage(UIImage(color: .lightGray), for: .disabled)
-        submitButton.setTitleColor(.white, for: .normal)
-        submitButton.layer.masksToBounds = true
-        submitButton.layer.cornerRadius = 5
+        filledButtonStyle(submitButton)
         formContainer.addArrangedSubview(submitButton)
 
         // Constraints
@@ -116,12 +101,6 @@ class LoginViewController: UIViewController {
             $0.bottom.centerX.equalTo(scrollView)
             $0.width.lessThanOrEqualTo(600).priority(.high)
             $0.width.equalTo(scrollView).inset(20).priority(.high)
-        }
-        emailInput.snp.makeConstraints {
-            $0.height.equalTo(44)
-        }
-        passwordInput.snp.makeConstraints {
-            $0.height.equalTo(44)
         }
         submitButton.snp.makeConstraints {
             $0.height.equalTo(44)

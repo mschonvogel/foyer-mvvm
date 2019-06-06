@@ -28,19 +28,16 @@ final class FeedViewController: UIViewController {
                 self.activities = $0
             }
             .disposed(by: disposeBag)
-
         activitiesLoaded
             .bind(to: collectionView.rx.items(cellIdentifier: FeedCellView.reuseIdentifier, cellType: FeedCellView.self)) { (_, activity, cell) in
                 cell.story.onNext(activity.story)
             }
             .disposed(by: disposeBag)
-
         showError
             .bind { message in
                 print(message)
             }
             .disposed(by: disposeBag)
-
         reloadButtonEnabled
             .bind(to:reloadBarButtonItem.rx.isEnabled)
             .disposed(by: disposeBag)
@@ -62,6 +59,9 @@ final class FeedViewController: UIViewController {
 
         view.backgroundColor = .white
 
+        collectionViewLayout.minimumLineSpacing = 1
+        collectionViewLayout.minimumInteritemSpacing = 1
+
         collectionView.backgroundColor = .white
         collectionView.alwaysBounceVertical = true
         collectionView.register(FeedCellView.self, forCellWithReuseIdentifier: FeedCellView.reuseIdentifier)
@@ -76,11 +76,8 @@ final class FeedViewController: UIViewController {
         super.viewDidLayoutSubviews()
 
         let numberOfCols = 1
-
         let sideWidth = (collectionView.frame.width - CGFloat(numberOfCols - 1)) / CGFloat(numberOfCols)
         collectionViewLayout.itemSize = .init(width: sideWidth, height: sideWidth)
-        collectionViewLayout.minimumLineSpacing = 1
-        collectionViewLayout.minimumInteritemSpacing = 1
     }
 }
 

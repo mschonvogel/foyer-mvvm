@@ -6,10 +6,15 @@ import SnapKit
 class AppUserViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
+    private let headerViewContainer = UIView()
     private let headerView = ProfileHeaderView()
     private let collectionView: UICollectionView
     private let collectionViewLayout = ParallaxFlowLayout()
     private var headerViewContainerHeightConstraint: NSLayoutConstraint?
+
+    convenience init(userName: String) {
+        self.init(nibName: nil, bundle: nil)
+    }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
@@ -18,7 +23,8 @@ class AppUserViewController: UIViewController {
 
         let (user, stories, _) = appUserViewModel(
             disposeBag: disposeBag,
-            viewDidLoad: rx.viewDidLoad.asObservable()
+            viewDidLoad: rx.viewDidLoad.asObservable(),
+            itemSelected: collectionView.rx.itemSelected.asObservable()
         )
 
         user
@@ -32,6 +38,8 @@ class AppUserViewController: UIViewController {
         collectionView.rx.contentOffsetAndViewSize
             .bind(to: headerView.parentScrollViewContentOffset)
             .disposed(by: disposeBag)
+
+//        hidesBottomBarWhenPushed = false
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -47,12 +55,10 @@ class AppUserViewController: UIViewController {
         collectionViewLayout.minimumInteritemSpacing = 1
 
         collectionView.backgroundColor = .white
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.alwaysBounceVertical = true
         collectionView.register(FeedCellView.self, forCellWithReuseIdentifier: FeedCellView.reuseIdentifier)
         view.addSubview(collectionView)
 
-        let headerViewContainer = UIView()
         headerViewContainer.backgroundColor = .green
         collectionView.addSubview(headerViewContainer)
 
@@ -69,7 +75,7 @@ class AppUserViewController: UIViewController {
         headerView.snp.makeConstraints {
             $0.left.right.equalTo(headerViewContainer)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).priority(.high)
-            $0.height.greaterThanOrEqualTo(headerViewContainer.snp.height).priority(.required)
+            $0.height.equalTo(headerViewContainer).priority(.high)
             $0.bottom.equalTo(headerViewContainer.snp.bottom)
         }
     }
@@ -78,12 +84,21 @@ class AppUserViewController: UIViewController {
         super.viewDidLayoutSubviews()
 
         let numberOfCols = 2
-
         let sideWidth = (collectionView.frame.width - CGFloat(numberOfCols - 1)) / CGFloat(numberOfCols)
         collectionViewLayout.itemSize = .init(width: sideWidth, height: sideWidth)
+    }
 
-        headerView.setNeedsLayout()
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        updateHeaderSize()
+    }
+
+    private func updateHeaderSize() {
+        headerViewContainerHeightConstraint?.constant = 100
+
         headerView.layoutIfNeeded()
+        headerViewContainer.layoutIfNeeded()
 
         headerViewContainerHeightConstraint?.constant = headerView.bounds.height
         collectionViewLayout.headerHeight = headerView.bounds.height
