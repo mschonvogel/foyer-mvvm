@@ -4,8 +4,9 @@ import RxSwift
 import RxCocoa
 import RxOptional
 
-func appUserViewModel(
+func userViewModel(
     disposeBag: DisposeBag,
+    userName: Observable<String>,
     viewDidLoad: Observable<Void>,
     itemSelected: Observable<IndexPath>
     ) -> (
@@ -14,17 +15,24 @@ func appUserViewModel(
     recalculateHeaderSize: Observable<Void>,
     showError: Observable<String>
     ) {
+        let userPublish = PublishSubject<UserContract?>()
         let storiesPublish = PublishSubject<[Story]>()
         let errorPublish = PublishSubject<String>()
 
-        Environment.shared.foyerClient.getFeatured { result in
-            switch result {
-            case .success(let stories):
-                storiesPublish.onNext(stories)
-            case .failure(let error):
-                errorPublish.onNext(error.localizedDescription)
+        viewDidLoad
+            .withLatestFrom(userName)
+            .bind { userName in
+                Environment.shared.foyerClient.getUser(userName) { result in
+                    switch result {
+                    case .success(let user):
+                        userPublish.onNext(user)
+                        storiesPublish.onNext(user.stories ?? [])
+                    case .failure(let error):
+                        errorPublish.onNext(error.localizedDescription)
+                    }
+                }
             }
-        }
+            .disposed(by: disposeBag)
         itemSelected
             .withLatestFrom(storiesPublish) { (indexPath, stories) -> Story in
                 stories[indexPath.item]
@@ -35,10 +43,10 @@ func appUserViewModel(
             .disposed(by: disposeBag)
 
         return (
-            user: Environment.shared.user.map { $0 },
+            user: userPublish,
             stories: storiesPublish,
-            recalculateHeaderSize: Environment.shared.user
-                .throttle(.milliseconds(5), scheduler: MainScheduler.asyncInstance)
+            recalculateHeaderSize: userPublish
+                .debounce(.milliseconds(5), scheduler: MainScheduler.asyncInstance)
                 .map { _ in },
             showError: errorPublish
         )

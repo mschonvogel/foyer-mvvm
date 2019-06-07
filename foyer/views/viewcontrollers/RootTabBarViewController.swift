@@ -19,7 +19,7 @@ extension RootTabBarItem {
             self = .feed
         case is DiscoverViewController:
             self = .discover
-        case is AppUserViewController:
+        case is UserViewController:
             self = .profile
         default:
             return nil
@@ -35,7 +35,7 @@ class RootTabBarViewController: UITabBarController {
     private let feedNavigationController: UINavigationController
     private let discoverViewController = DiscoverViewController()
     private let discoverNavigationController: UINavigationController
-    private let profileViewController = AppUserViewController()
+    private let profileViewController = UserViewController()
     private let profileNavigationController: UINavigationController
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

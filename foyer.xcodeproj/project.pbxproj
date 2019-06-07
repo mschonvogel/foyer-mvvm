@@ -45,6 +45,7 @@
 		E94DA66422A7D5F600050EC2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA66322A7D5F600050EC2 /* String+Extensions.swift */; };
 		E94DA66622A914D200050EC2 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA66522A914D200050EC2 /* Styles.swift */; };
 		E94DA66822A9176000050EC2 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA66722A9176000050EC2 /* Operators.swift */; };
+		E94DA67722A945C600050EC2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA67622A945C600050EC2 /* UserViewModel.swift */; };
 		E95867A5228D9FA600F9FBF9 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95867A4228D9FA600F9FBF9 /* RootTabBarViewController.swift */; };
 		E95867A7228DA3A800F9FBF9 /* RootTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95867A6228DA3A800F9FBF9 /* RootTabBarViewModel.swift */; };
 		E95867AB228EB51100F9FBF9 /* RootTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95867AA228EB51100F9FBF9 /* RootTabBarViewModelTests.swift */; };
@@ -58,7 +59,7 @@
 		E9A678322289A1300084A760 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6782D2289A1300084A760 /* DiscoverViewController.swift */; };
 		E9A678332289A1300084A760 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6782E2289A1300084A760 /* StoryViewController.swift */; };
 		E9A678342289A1300084A760 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6782F2289A1300084A760 /* FeedViewController.swift */; };
-		E9A678372289A40D0084A760 /* AppUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A678362289A40D0084A760 /* AppUserViewController.swift */; };
+		E9A678372289A40D0084A760 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A678362289A40D0084A760 /* UserViewController.swift */; };
 		E9A678392289A5890084A760 /* FoyerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A678382289A5890084A760 /* FoyerClient.swift */; };
 		E9A6783C2289BBCE0084A760 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6783B2289BBCE0084A760 /* Story.swift */; };
 		E9A6783E2289BCC70084A760 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6783D2289BCC70084A760 /* Networker.swift */; };
@@ -130,6 +131,7 @@
 		E94DA66322A7D5F600050EC2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E94DA66522A914D200050EC2 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		E94DA66722A9176000050EC2 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		E94DA67622A945C600050EC2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E95867A4228D9FA600F9FBF9 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		E95867A6228DA3A800F9FBF9 /* RootTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModel.swift; sourceTree = "<group>"; };
 		E95867AA228EB51100F9FBF9 /* RootTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModelTests.swift; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 		E9A6782D2289A1300084A760 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		E9A6782E2289A1300084A760 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		E9A6782F2289A1300084A760 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		E9A678362289A40D0084A760 /* AppUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserViewController.swift; sourceTree = "<group>"; };
+		E9A678362289A40D0084A760 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		E9A678382289A5890084A760 /* FoyerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoyerClient.swift; sourceTree = "<group>"; };
 		E9A6783B2289BBCE0084A760 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		E9A6783D2289BCC70084A760 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				E94DA64B229D3BA700050EC2 /* ProfileHeaderViewModel.swift */,
 				E95867A6228DA3A800F9FBF9 /* RootTabBarViewModel.swift */,
 				E9473EDB228B5ED300AA1CAB /* StoryViewModel.swift */,
+				E94DA67622A945C600050EC2 /* UserViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -311,7 +314,7 @@
 		E9A6782C2289A1300084A760 /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				E9A678362289A40D0084A760 /* AppUserViewController.swift */,
+				E9A678362289A40D0084A760 /* UserViewController.swift */,
 				E9A6782D2289A1300084A760 /* DiscoverViewController.swift */,
 				E9A6782F2289A1300084A760 /* FeedViewController.swift */,
 				E9473ED9228B525A00AA1CAB /* LoginViewController.swift */,
@@ -664,9 +667,10 @@
 				E94489C1228C455D00E49887 /* LoginViewModel.swift in Sources */,
 				E94DA66222A164CD00050EC2 /* NSAttributedString+Extensions.swift in Sources */,
 				E9A678332289A1300084A760 /* StoryViewController.swift in Sources */,
-				E9A678372289A40D0084A760 /* AppUserViewController.swift in Sources */,
+				E9A678372289A40D0084A760 /* UserViewController.swift in Sources */,
 				E95867A5228D9FA600F9FBF9 /* RootTabBarViewController.swift in Sources */,
 				E94DA66022A028F100050EC2 /* ParallaxFlowLayout.swift in Sources */,
+				E94DA67722A945C600050EC2 /* UserViewModel.swift in Sources */,
 				E9473EAD2289C85500AA1CAB /* UIViewController+Extensions.swift in Sources */,
 				E94DA60F22958A5B00050EC2 /* UIImage+Extensions.swift in Sources */,
 				E95867B822954F8100F9FBF9 /* Rx+Extensions.swift in Sources */,

@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-class AppUserViewController: UIViewController {
+class UserViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
     private let headerViewContainer = UIView()
@@ -14,14 +14,31 @@ class AppUserViewController: UIViewController {
 
     convenience init(userName: String) {
         self.init(nibName: nil, bundle: nil)
+
+        let (user, stories, recalculateHeaderSize, _) = userViewModel(
+            disposeBag: disposeBag,
+            userName: .of(userName),
+            viewDidLoad: rx.viewDidLoad.asObservable(),
+            itemSelected: collectionView.rx.itemSelected.asObservable()
+        )
+
+        user       
+            .bind(to: headerView.user)
+            .disposed(by: disposeBag)
+        recalculateHeaderSize
+            .bind { [weak self] _ in self?.updateHeaderSize() }
+            .disposed(by: disposeBag)
+        stories
+            .bind(to: collectionView.rx.items(cellIdentifier: FeedCellView.reuseIdentifier, cellType: FeedCellView.self)) { (_, story, cell) in
+                cell.story.onNext(story)
+            }
+            .disposed(by: disposeBag)
     }
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+    convenience init() {
+        self.init(nibName: nil, bundle: nil)
 
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-
-        let (user, stories, _) = appUserViewModel(
+        let (user, stories, recalculateHeaderSize, _) = appUserViewModel(
             disposeBag: disposeBag,
             viewDidLoad: rx.viewDidLoad.asObservable(),
             itemSelected: collectionView.rx.itemSelected.asObservable()
@@ -30,16 +47,24 @@ class AppUserViewController: UIViewController {
         user
             .bind(to: headerView.user)
             .disposed(by: disposeBag)
+        recalculateHeaderSize
+            .bind { [weak self] _ in self?.updateHeaderSize() }
+            .disposed(by: disposeBag)
         stories
             .bind(to: collectionView.rx.items(cellIdentifier: FeedCellView.reuseIdentifier, cellType: FeedCellView.self)) { (_, story, cell) in
                 cell.story.onNext(story)
             }
             .disposed(by: disposeBag)
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
         collectionView.rx.contentOffsetAndViewSize
             .bind(to: headerView.parentScrollViewContentOffset)
             .disposed(by: disposeBag)
-
-//        hidesBottomBarWhenPushed = false
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -59,7 +84,6 @@ class AppUserViewController: UIViewController {
         collectionView.register(FeedCellView.self, forCellWithReuseIdentifier: FeedCellView.reuseIdentifier)
         view.addSubview(collectionView)
 
-        headerViewContainer.backgroundColor = .green
         collectionView.addSubview(headerViewContainer)
 
         headerViewContainer.addSubview(headerView)

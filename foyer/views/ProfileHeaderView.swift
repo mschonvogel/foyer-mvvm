@@ -102,7 +102,7 @@ class ProfileHeaderView: UIView {
 
         biographyTextView.linkTextAttributes = [
             .paragraphStyle: style,
-//            .underlineStyle : 1,
+            .underlineStyle : 1,
             .foregroundColor: UIColor.blue
         ]
         addSubview(biographyTextView)

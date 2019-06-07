@@ -20,7 +20,7 @@ func storyViewModel(
         authorNameButtonPressed
             .withLatestFrom(story)
             .bind { story in
-                Environment.shared.router.presentUser(story.author)
+                Environment.shared.router.presentUser(story.author.userName)
             }
             .disposed(by: disposeBag)
         return (

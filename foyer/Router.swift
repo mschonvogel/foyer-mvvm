@@ -7,7 +7,7 @@ protocol RouterContract {
     func start(rootController: UITabBarController)
     func presentFeed()
     func presentStory(_ story: Story)
-    func presentUser(_ user: UserContract)
+    func presentUser(_ userName: String)
     func presentDiscover()
     func presentProfile()
     func presentLogin()
@@ -45,8 +45,8 @@ extension Router: RouterContract {
         pushOnCurrentViewControllerIfPossible(vc)
     }
 
-    func presentUser(_ user: UserContract) {
-        let vc = AppUserViewController()
+    func presentUser(_ userName: String) {
+        let vc = UserViewController(userName: userName)
         pushOnCurrentViewControllerIfPossible(vc)
     }
 
