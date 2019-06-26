@@ -6,6 +6,7 @@ target 'foyer' do
     pod 'RxCocoa', '~> 5'
     pod 'RxOptional', '~> 4'
     pod 'RxViewController', '~> 0.4'
+    pod 'RxDataSources', '~> 4.0'
     pod 'SnapKit', '~> 5.0.0'
 end
 

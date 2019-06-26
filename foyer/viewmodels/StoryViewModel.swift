@@ -1,31 +1,57 @@
 import Foundation
 import RxSwift
+import RxDataSources
+
+extension Story.Item: IdentifiableType {
+    typealias Identity = String
+    var identity: Identity { return objectId }
+}
+
+struct StorySectionModel: AnimatableSectionModelType {
+    typealias Identity = String
+    typealias Item = Story.Item
+
+    var items: [Story.Item]
+    var title: String?
+    var text: String?
+    var internId: String
+
+    init(original: StorySectionModel, items: [Story.Item]) {
+        self = original
+        self.items = items
+    }
+
+    init(section: Story.Section) {
+        self.items = section.items
+        self.title = section.title
+        self.text = section.text
+        self.internId = section.internId
+    }
+
+    var identity: String { return internId }
+}
 
 func storyViewModel(
     disposeBag: DisposeBag,
     viewDidLoad: Observable<Void>,
     story: Observable<Story>,
-    authorNameButtonPressed: Observable<Void>,
-    closeButtonPressed: Observable<Void>
+    closeButtonPressed: Observable<Void>,
+    editButtonPressed: Observable<Void>
     ) -> (
-    title: Observable<String>,
-    authorName: Observable<String>,
-    coverImage: Observable<UIImage>
+    sections: Observable<[StorySectionModel]>,
+    isEditing: Observable<Bool>
     ) {
         closeButtonPressed
             .bind {
                 Environment.shared.router.dismiss()
             }
             .disposed(by: disposeBag)
-        authorNameButtonPressed
-            .withLatestFrom(story)
-            .bind { story in
-                Environment.shared.router.presentUser(story.author.userName)
-            }
-            .disposed(by: disposeBag)
+        var isEditing = false
         return (
-            title: story.map { $0.title },
-            authorName: story.map { $0.author.userName },
-            coverImage: .never()
+            sections: story.map { $0.sections.map(StorySectionModel.init) },
+            isEditing: editButtonPressed.map {
+                isEditing = !isEditing
+                return isEditing
+            }
         )
 }

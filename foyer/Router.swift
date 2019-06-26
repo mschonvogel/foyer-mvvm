@@ -24,7 +24,7 @@ extension Router: RouterContract {
     }
 
     func presentLogin() {
-        let vc = UINavigationController(rootViewController: LoginViewController())
+        let vc = NavigationController(rootViewController: LoginViewController())
         tabBarViewController.present(vc, animated: true, completion: nil)
     }
 
@@ -53,32 +53,41 @@ extension Router: RouterContract {
     func dismiss() {
         if let navigationController = tabBarViewController.presentedViewController as? UINavigationController, navigationController.viewControllers.count > 1 {
             navigationController.popViewController(animated: true)
-            return
-        }
-        if let presentedViewController = tabBarViewController.presentedViewController {
+        } else if let presentedViewController = tabBarViewController.presentedViewController {
             presentedViewController.dismiss(animated: true, completion: nil)
-            return
-        }
-        if let navigationController = tabBarViewController.selectedViewController as? UINavigationController, navigationController.viewControllers.count > 1 {
+        } else if let navigationController = tabBarViewController.selectedViewController as? UINavigationController, navigationController.viewControllers.count > 1 {
             navigationController.popViewController(animated: true)
-            return
+        } else {
+            tabBarViewController.dismiss(animated: true, completion: nil)
         }
-        tabBarViewController.dismiss(animated: true, completion: nil)
     }
 
     private func pushOnCurrentViewControllerIfPossible(_ viewController: UIViewController) {
         if let navigationController = tabBarViewController.presentedViewController as? UINavigationController {
             navigationController.pushViewController(viewController, animated: true)
-            return
-        }
-        if let presentedViewController = tabBarViewController.presentedViewController {
+        } else if let presentedViewController = tabBarViewController.presentedViewController {
             presentedViewController.present(viewController, animated: true, completion: nil)
-            return
-        }
-        if let navigationController = tabBarViewController.selectedViewController as? UINavigationController {
+        } else if let navigationController = tabBarViewController.selectedViewController as? UINavigationController {
             navigationController.pushViewController(viewController, animated: true)
-            return
+        } else {
+            tabBarViewController.present(viewController, animated: true, completion: nil)
         }
-        tabBarViewController.present(viewController, animated: true, completion: nil)
+    }
+}
+
+class NavigationController: UINavigationController {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        viewController.hidesBottomBarWhenPushed = viewController is HiddenTabBarViewController
+
+        super.pushViewController(viewController, animated: animated)
+
+        viewController.hidesBottomBarWhenPushed = false
+    }
+    override func popViewController(animated: Bool) -> UIViewController? {
+        if viewControllers.count > 1 {
+            viewControllers[viewControllers.count-2].hidesBottomBarWhenPushed = viewControllers[viewControllers.count-2] is HiddenTabBarViewController
+        }
+
+        return super.popViewController(animated: animated)
     }
 }

@@ -22,7 +22,7 @@ class UserViewController: UIViewController {
             itemSelected: collectionView.rx.itemSelected.asObservable()
         )
 
-        user       
+        user
             .bind(to: headerView.user)
             .disposed(by: disposeBag)
         recalculateHeaderSize
@@ -99,7 +99,7 @@ class UserViewController: UIViewController {
         headerView.snp.makeConstraints {
             $0.left.right.equalTo(headerViewContainer)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).priority(.high)
-            $0.height.equalTo(headerViewContainer).priority(.high)
+            $0.height.greaterThanOrEqualTo(headerViewContainer).priority(.high)
             $0.bottom.equalTo(headerViewContainer.snp.bottom)
         }
     }

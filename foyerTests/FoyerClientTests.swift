@@ -46,14 +46,14 @@ class FoyerClientTests: XCTestCase {
 
     private func createExpectedResource<T: Codable, U>(url: URL, method: HttpMethod<U>) -> Resource<T> {
         var expectedResource = Resource<T>.init(url: url, method: method)
-        expectedResource.urlRequest.setValue("4vbeFulPYdov1Lk46Jc96yaKCRTEhNyL", forHTTPHeaderField: "api-token")
+        expectedResource.urlRequest.setValue("mIQT8FDbMsvb6eZW63nuOilA9eZqpwEz", forHTTPHeaderField: "api-token")
         expectedResource.urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return expectedResource
     }
 
-    private func createExpectedResource<T>(get url: URL) -> Resource<T> where T: Decodable {
+    private func createExpectedResource<T: Decodable>(get url: URL) -> Resource<T> {
         var expectedResource = Resource<T>.init(get: url)
-        expectedResource.urlRequest.setValue("4vbeFulPYdov1Lk46Jc96yaKCRTEhNyL", forHTTPHeaderField: "api-token")
+        expectedResource.urlRequest.setValue("mIQT8FDbMsvb6eZW63nuOilA9eZqpwEz", forHTTPHeaderField: "api-token")
         expectedResource.urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return expectedResource
     }

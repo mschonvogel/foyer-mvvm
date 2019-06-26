@@ -19,6 +19,16 @@ extension FoyerClient {
                 .success([Activity.mock])
             )
         },
+        getUser: { (userName, completion) in
+            completion(
+                .success(User.mock)
+            )
+        },
+        getAppUser: { completion in
+            completion(
+                .success(AppUser.mock)
+            )
+        },
         loadImage: { (url, completion) -> SessionDataTask in
             completion(
                 .success(.mock)

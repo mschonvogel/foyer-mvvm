@@ -33,6 +33,11 @@ class RouterSpy: RouterContract {
         presentProfileCalled.append(())
     }
 
+    private (set) var presentUserCalled: [String] = []
+    func presentUser(_ userName: String) {
+        presentUserCalled.append(userName)
+    }
+
     private (set) var dismissCalled: [()] = []
     func dismiss() {
         dismissCalled.append(())

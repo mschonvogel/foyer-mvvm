@@ -100,6 +100,79 @@ let passwordTextFieldStyle =
             $0.placeholder = "••••••••••••••••"
 }
 
+// textviews
+let baseTextViewStyle: (UITextView) -> Void = {
+    $0.textContainerInset = .zero
+    $0.textContainer.lineFragmentPadding = 0
+    $0.backgroundColor = .clear
+    $0.isScrollEnabled = false
+    $0.contentInset = .zero
+    $0.isOpaque = false
+    $0.isEditable = false
+    $0.autocorrectionType = .no
+    $0.autocapitalizationType = .none
+    $0.dataDetectorTypes = [.link, .phoneNumber, .address]
+    $0.isUserInteractionEnabled = true
+
+    let style = NSMutableParagraphStyle()
+    style.lineSpacing = 3
+
+    $0.linkTextAttributes = [
+        .paragraphStyle: style,
+        .underlineStyle : 1,
+        .foregroundColor: UIColor.blue
+    ]
+}
+let bodyTextViewStyle: (UITextView) -> Void =
+    baseTextViewStyle <> {
+        $0.font = .preferredFont(forTextStyle: .body)
+}
+let storyHeaderTextViewStyle: (UITextView) -> Void =
+    baseTextViewStyle <> {
+        $0.font = .preferredFont(forTextStyle: .largeTitle)
+        $0.textAlignment = .center
+        $0.textColor = .white
+}
+let storySectionHeaderTitleAttributes: [NSAttributedString.Key : Any] = {
+    let style = NSMutableParagraphStyle()
+    style.lineSpacing = 6
+    style.alignment = .center
+
+    return [
+        .paragraphStyle: style,
+        .font: UIFont(name: "HelveticaNeue-Light", size: 24)!,
+        .kern: 1.5
+    ]
+}()
+let storySectionHeaderTitleTextViewStyle: (UITextView) -> Void =
+    baseTextViewStyle <> {
+        $0.textAlignment = .center
+        $0.textColor = .black
+        $0.attributedText = .init(string: " ", attributes: storySectionHeaderTitleAttributes)
+        $0.text = ""
+        $0.textContainer.lineFragmentPadding = 0
+}
+let storySectionHeaderContentAttributes: [NSAttributedString.Key : Any] = {
+    let style = NSMutableParagraphStyle()
+    style.lineSpacing = 8
+    style.alignment = .left
+
+    return [
+        .paragraphStyle: style,
+        .font: UIFont(name: "Georgia", size: 16)!,
+    ]
+}()
+let storySectionHeaderContentTextViewStyle: (UITextView) -> Void =
+    baseTextViewStyle <> {
+        $0.font = .preferredFont(forTextStyle: .largeTitle)
+        $0.textAlignment = .center
+        $0.textColor = .black
+        $0.textContainer.lineFragmentPadding = 0
+
+        $0.attributedText = .init(string: " ", attributes: storySectionHeaderContentAttributes)
+        $0.text = ""
+}
+
 // labels
 func fontStyle(ofSize size: CGFloat, weight: UIFont.Weight) -> (UILabel) -> Void {
     return {
@@ -115,6 +188,11 @@ func textColorStyle(_ color: UIColor) -> (UILabel) -> Void {
 
 let centerStyle: (UILabel) -> Void = {
     $0.textAlignment = .center
+}
+
+let captionStyle: (UILabel) -> Void = {
+    $0.textColor = .darkGray
+    $0.font = .preferredFont(forTextStyle: .caption1)
 }
 
 // hyper-local
@@ -139,3 +217,27 @@ let rootStackViewStyle: (UIStackView) -> Void = {
     $0.layoutMargins = UIEdgeInsets(top: 32, left: 16, bottom: 32, right: 16)
     $0.spacing = 16
 }
+
+extension NSAttributedString {
+
+    func sizeFittingWidth(_ w: CGFloat) -> CGSize {
+        let textStorage = NSTextStorage(attributedString: self)
+        let size = CGSize(width: w, height: CGFloat.greatestFiniteMagnitude)
+        let boundingRect = CGRect(origin: .zero, size: size)
+
+        let textContainer = NSTextContainer(size: size)
+        textContainer.lineFragmentPadding = 0
+
+        let layoutManager = NSLayoutManager()
+        layoutManager.addTextContainer(textContainer)
+
+        textStorage.addLayoutManager(layoutManager)
+
+        layoutManager.glyphRange(forBoundingRect: boundingRect, in: textContainer)
+
+        let rect = layoutManager.usedRect(for: textContainer)
+
+        return rect.integral.size
+    }
+}
+

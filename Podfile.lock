@@ -1,9 +1,14 @@
 PODS:
+  - Differentiator (4.0.1)
   - RxBlocking (5.0.0):
     - RxSwift (~> 5)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxOptional (4.0.0):
     - RxCocoa (~> 5)
     - RxSwift (~> 5)
@@ -20,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
+  - RxDataSources (~> 4.0)
   - RxOptional (~> 4)
   - RxSwift (~> 5)
   - RxTest (~> 5)
@@ -28,8 +34,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Differentiator
     - RxBlocking
     - RxCocoa
+    - RxDataSources
     - RxOptional
     - RxRelay
     - RxSwift
@@ -38,8 +46,10 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxOptional: 9904e2219d59260c3c171273d475b2126de187e8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
@@ -47,6 +57,6 @@ SPEC CHECKSUMS:
   RxViewController: e93e7c233d5b5b62c32231d69726d55f54081bc6
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: a4a627d0438e06d2be81ec77af105e1c7fce8f50
+PODFILE CHECKSUM: 919e705163f683782a39ba617172455bdd9a9b77
 
 COCOAPODS: 1.6.1

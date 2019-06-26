@@ -11,7 +11,7 @@ extension RootTabBarItem {
     init?(viewController: UIViewController) {
         var vc = viewController
         if let nc = vc as? UINavigationController {
-            vc = nc.viewControllers.last!
+            vc = nc.viewControllers.first!
         }
 
         switch vc {
@@ -32,11 +32,11 @@ class RootTabBarViewController: UITabBarController {
     private let tabBarItemPressed = PublishSubject<RootTabBarItem>()
 
     private let feedViewController = FeedViewController()
-    private let feedNavigationController: UINavigationController
+    private let feedNavigationController: NavigationController
     private let discoverViewController = DiscoverViewController()
-    private let discoverNavigationController: UINavigationController
+    private let discoverNavigationController: NavigationController
     private let profileViewController = UserViewController()
-    private let profileNavigationController: UINavigationController
+    private let profileNavigationController: NavigationController
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         feedNavigationController = .init(rootViewController: feedViewController)

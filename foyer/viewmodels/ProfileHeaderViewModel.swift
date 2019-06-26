@@ -9,11 +9,13 @@ func profileHeaderViewModel(
     followingPressed: Observable<Void>
     ) -> (
     name: Observable<String?>,
+    nameIsHidden: Observable<Bool>,
     followersCount: Observable<String?>,
     followingCount: Observable<String?>,
     userPhoto: Observable<UIImage?>,
     userPhotoScale: Observable<CGFloat>,
-    biography: Observable<NSAttributedString?>
+    biography: Observable<NSAttributedString?>,
+    biographyIsHidden: Observable<Bool>
     ) {
         let userPhoto: Observable<UIImage?> = user
             .observeOn(MainScheduler.asyncInstance)
@@ -51,6 +53,7 @@ func profileHeaderViewModel(
         ]
         return (
             name: user.map { $0?.userName },
+            nameIsHidden: user.map { $0?.userName == nil },
             followersCount: user.map { $0?.followersCount.stringValue },
             followingCount: user.map { $0?.followingCount.stringValue },
             userPhoto: userPhoto,
@@ -60,6 +63,7 @@ func profileHeaderViewModel(
                     ? NSAttributedString(string: $0!.biography!.replacedHtmlEntities,
                                          attributes: biographyAttributes)
                     : nil
-            }
+            },
+            biographyIsHidden: user.map { $0?.biography == nil }
         )
 }

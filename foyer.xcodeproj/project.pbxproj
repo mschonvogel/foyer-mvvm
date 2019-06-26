@@ -46,6 +46,15 @@
 		E94DA66622A914D200050EC2 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA66522A914D200050EC2 /* Styles.swift */; };
 		E94DA66822A9176000050EC2 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA66722A9176000050EC2 /* Operators.swift */; };
 		E94DA67722A945C600050EC2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA67622A945C600050EC2 /* UserViewModel.swift */; };
+		E94DA67922AAAC1C00050EC2 /* BalancedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA67822AAAC1C00050EC2 /* BalancedLayout.swift */; };
+		E94DA67B22AFA69D00050EC2 /* StoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA67A22AFA69D00050EC2 /* StoryHeaderView.swift */; };
+		E94DA67D22AFAEA700050EC2 /* HiddenTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA67C22AFAEA700050EC2 /* HiddenTabBarViewController.swift */; };
+		E94DA67F22AFBB7200050EC2 /* StoryItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA67E22AFBB7100050EC2 /* StoryItemCellView.swift */; };
+		E94DA68122AFE86800050EC2 /* StoryHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA68022AFE86800050EC2 /* StoryHeaderViewModel.swift */; };
+		E94DA68322B0D3FB00050EC2 /* StoryItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA68222B0D3FB00050EC2 /* StoryItemCellViewModel.swift */; };
+		E94DA68922B79C9100050EC2 /* StorySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA68822B79C9100050EC2 /* StorySectionHeaderView.swift */; };
+		E94DA68B22B7B62C00050EC2 /* StorySectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA68A22B7B62C00050EC2 /* StorySectionFooterView.swift */; };
+		E94DA68D22B7E98000050EC2 /* StorySectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DA68C22B7E98000050EC2 /* StorySectionHeaderViewModel.swift */; };
 		E95867A5228D9FA600F9FBF9 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95867A4228D9FA600F9FBF9 /* RootTabBarViewController.swift */; };
 		E95867A7228DA3A800F9FBF9 /* RootTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95867A6228DA3A800F9FBF9 /* RootTabBarViewModel.swift */; };
 		E95867AB228EB51100F9FBF9 /* RootTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95867AA228EB51100F9FBF9 /* RootTabBarViewModelTests.swift */; };
@@ -132,6 +141,15 @@
 		E94DA66522A914D200050EC2 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		E94DA66722A9176000050EC2 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		E94DA67622A945C600050EC2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		E94DA67822AAAC1C00050EC2 /* BalancedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancedLayout.swift; sourceTree = "<group>"; };
+		E94DA67A22AFA69D00050EC2 /* StoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHeaderView.swift; sourceTree = "<group>"; };
+		E94DA67C22AFAEA700050EC2 /* HiddenTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenTabBarViewController.swift; sourceTree = "<group>"; };
+		E94DA67E22AFBB7100050EC2 /* StoryItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryItemCellView.swift; sourceTree = "<group>"; };
+		E94DA68022AFE86800050EC2 /* StoryHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHeaderViewModel.swift; sourceTree = "<group>"; };
+		E94DA68222B0D3FB00050EC2 /* StoryItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryItemCellViewModel.swift; sourceTree = "<group>"; };
+		E94DA68822B79C9100050EC2 /* StorySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySectionHeaderView.swift; sourceTree = "<group>"; };
+		E94DA68A22B7B62C00050EC2 /* StorySectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySectionFooterView.swift; sourceTree = "<group>"; };
+		E94DA68C22B7E98000050EC2 /* StorySectionHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySectionHeaderViewModel.swift; sourceTree = "<group>"; };
 		E95867A4228D9FA600F9FBF9 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		E95867A6228DA3A800F9FBF9 /* RootTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModel.swift; sourceTree = "<group>"; };
 		E95867AA228EB51100F9FBF9 /* RootTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModelTests.swift; sourceTree = "<group>"; };
@@ -218,6 +236,7 @@
 				E9473EAC2289C85500AA1CAB /* UIViewController+Extensions.swift */,
 				E94DA66322A7D5F600050EC2 /* String+Extensions.swift */,
 				E94DA66722A9176000050EC2 /* Operators.swift */,
+				E94DA67C22AFAEA700050EC2 /* HiddenTabBarViewController.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -272,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				E94DA65F22A028F100050EC2 /* ParallaxFlowLayout.swift */,
+				E94DA67822AAAC1C00050EC2 /* BalancedLayout.swift */,
 			);
 			path = layouts;
 			sourceTree = "<group>";
@@ -287,6 +307,9 @@
 				E95867A6228DA3A800F9FBF9 /* RootTabBarViewModel.swift */,
 				E9473EDB228B5ED300AA1CAB /* StoryViewModel.swift */,
 				E94DA67622A945C600050EC2 /* UserViewModel.swift */,
+				E94DA68022AFE86800050EC2 /* StoryHeaderViewModel.swift */,
+				E94DA68222B0D3FB00050EC2 /* StoryItemCellViewModel.swift */,
+				E94DA68C22B7E98000050EC2 /* StorySectionHeaderViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -297,6 +320,7 @@
 				E94DA66522A914D200050EC2 /* Styles.swift */,
 				E94DA65E22A028C700050EC2 /* layouts */,
 				E94DA649229D3B9200050EC2 /* ProfileHeaderView.swift */,
+				E94DA67A22AFA69D00050EC2 /* StoryHeaderView.swift */,
 				E9A6782A2289A1300084A760 /* cells */,
 				E9A6782C2289A1300084A760 /* viewcontrollers */,
 			);
@@ -307,6 +331,9 @@
 			isa = PBXGroup;
 			children = (
 				E9A6782B2289A1300084A760 /* FeedCellView.swift */,
+				E94DA67E22AFBB7100050EC2 /* StoryItemCellView.swift */,
+				E94DA68822B79C9100050EC2 /* StorySectionHeaderView.swift */,
+				E94DA68A22B7B62C00050EC2 /* StorySectionFooterView.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -615,7 +642,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-foyer/Pods-foyer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -626,7 +655,9 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -651,6 +682,9 @@
 				E9473EB12289F5DE00AA1CAB /* FeedCellViewModel.swift in Sources */,
 				E94DA648229C9B6300050EC2 /* AppUserViewModel.swift in Sources */,
 				E94DA64C229D3BA700050EC2 /* ProfileHeaderViewModel.swift in Sources */,
+				E94DA67F22AFBB7200050EC2 /* StoryItemCellView.swift in Sources */,
+				E94DA68122AFE86800050EC2 /* StoryHeaderViewModel.swift in Sources */,
+				E94DA68922B79C9100050EC2 /* StorySectionHeaderView.swift in Sources */,
 				E9473EDA228B525A00AA1CAB /* LoginViewController.swift in Sources */,
 				E9A677B2228344C80084A760 /* Router.swift in Sources */,
 				E94DA63E229C064D00050EC2 /* Activity.swift in Sources */,
@@ -667,12 +701,17 @@
 				E94489C1228C455D00E49887 /* LoginViewModel.swift in Sources */,
 				E94DA66222A164CD00050EC2 /* NSAttributedString+Extensions.swift in Sources */,
 				E9A678332289A1300084A760 /* StoryViewController.swift in Sources */,
+				E94DA67922AAAC1C00050EC2 /* BalancedLayout.swift in Sources */,
+				E94DA68322B0D3FB00050EC2 /* StoryItemCellViewModel.swift in Sources */,
 				E9A678372289A40D0084A760 /* UserViewController.swift in Sources */,
 				E95867A5228D9FA600F9FBF9 /* RootTabBarViewController.swift in Sources */,
 				E94DA66022A028F100050EC2 /* ParallaxFlowLayout.swift in Sources */,
 				E94DA67722A945C600050EC2 /* UserViewModel.swift in Sources */,
 				E9473EAD2289C85500AA1CAB /* UIViewController+Extensions.swift in Sources */,
+				E94DA67D22AFAEA700050EC2 /* HiddenTabBarViewController.swift in Sources */,
 				E94DA60F22958A5B00050EC2 /* UIImage+Extensions.swift in Sources */,
+				E94DA68D22B7E98000050EC2 /* StorySectionHeaderViewModel.swift in Sources */,
+				E94DA67B22AFA69D00050EC2 /* StoryHeaderView.swift in Sources */,
 				E95867B822954F8100F9FBF9 /* Rx+Extensions.swift in Sources */,
 				E9A678322289A1300084A760 /* DiscoverViewController.swift in Sources */,
 				E9A678392289A5890084A760 /* FoyerClient.swift in Sources */,
@@ -681,6 +720,7 @@
 				E9A6783C2289BBCE0084A760 /* Story.swift in Sources */,
 				E95867B6229549C800F9FBF9 /* Validator.swift in Sources */,
 				E9A6783E2289BCC70084A760 /* Networker.swift in Sources */,
+				E94DA68B22B7B62C00050EC2 /* StorySectionFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,8 @@ extension User {
         followersCount: 111,
         followingCount: 222,
         currentUserFollows: false,
-        currentUserBlocks: false
+        currentUserBlocks: false,
+        stories: nil
     )
 }
 
@@ -26,6 +27,7 @@ extension AppUser {
         followingCount: 222,
         currentUserFollows: false,
         currentUserBlocks: false,
+        stories: nil,
         avatarUploadUrl: nil,
         email: "test-user@test.com",
         token: "Secure-Token",
