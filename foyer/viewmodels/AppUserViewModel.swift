@@ -7,7 +7,8 @@ import RxOptional
 func appUserViewModel(
     disposeBag: DisposeBag,
     viewDidLoad: Observable<Void>,
-    itemSelected: Observable<IndexPath>
+    itemSelected: Observable<IndexPath>,
+    logoutButtonPressed: Observable<Void>
     ) -> (
     user: Observable<UserContract?>,
     stories: Observable<[Story]>,
@@ -31,6 +32,11 @@ func appUserViewModel(
             }
             .bind { story in
                 Environment.shared.router.presentStory(story)
+            }
+            .disposed(by: disposeBag)
+        logoutButtonPressed
+            .bind {
+                Environment.shared.logout()
             }
             .disposed(by: disposeBag)
 

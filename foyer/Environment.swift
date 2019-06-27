@@ -33,6 +33,12 @@ struct Environment {
         }
     }
 
+    func logout() {
+        user.onNext(nil)
+        saveEnvironment()
+        router.presentFeed()
+    }
+
     func start() {
         if let currentUser = keyValueStore.get(AppUser.self, forKey: "currentUser", dateEncodingStrategy: .millisecondsSince1970) {
             user.onNext(currentUser)

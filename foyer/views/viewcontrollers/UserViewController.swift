@@ -38,10 +38,13 @@ class UserViewController: UIViewController {
     convenience init() {
         self.init(nibName: nil, bundle: nil)
 
+        let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: nil, action: nil)
+
         let (user, stories, recalculateHeaderSize, _) = appUserViewModel(
             disposeBag: disposeBag,
             viewDidLoad: rx.viewDidLoad.asObservable(),
-            itemSelected: collectionView.rx.itemSelected.asObservable()
+            itemSelected: collectionView.rx.itemSelected.asObservable(),
+            logoutButtonPressed: logoutButton.rx.tap.asObservable()
         )
 
         user
@@ -55,6 +58,8 @@ class UserViewController: UIViewController {
                 cell.story.onNext(story)
             }
             .disposed(by: disposeBag)
+
+        navigationItem.rightBarButtonItem = logoutButton
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -93,7 +98,7 @@ class UserViewController: UIViewController {
         }
         headerViewContainer.snp.makeConstraints {
             $0.top.equalTo(collectionView)
-            $0.left.right.equalTo(view)
+            $0.leading.trailing.equalTo(view)
             headerViewContainerHeightConstraint = $0.height.equalTo(100).priority(.medium).constraint.layoutConstraints.first
         }
         headerView.snp.makeConstraints {
