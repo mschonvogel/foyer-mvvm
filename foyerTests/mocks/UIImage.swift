@@ -5,6 +5,6 @@ private class BundleLocator {}
 
 extension UIImage {
     static let mock: UIImage = {
-        return UIImage(named: "test.png", in: Bundle(for: BundleLocator.self), compatibleWith: nil)!
+        return UIImage(named: "story.jpg", in: Bundle(for: BundleLocator.self), compatibleWith: nil)!
     }()
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AE4DB7BBA9E0557DCDBA68CB /* Pods_foyerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CC57C4F260000E14B4D49D /* Pods_foyerTests.framework */; };
+		E92E42A222C3F31B00BCDF68 /* UserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92E42A122C3F31B00BCDF68 /* UserViewControllerTests.swift */; };
+		E92E42A422C4ACB200BCDF68 /* story.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E92E42A322C4ACB200BCDF68 /* story.jpg */; };
 		E94489BF228C0D0D00E49887 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94489BE228C0D0D00E49887 /* User.swift */; };
 		E94489C1228C455D00E49887 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94489C0228C455D00E49887 /* LoginViewModel.swift */; };
 		E9473EAD2289C85500AA1CAB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9473EAC2289C85500AA1CAB /* UIViewController+Extensions.swift */; };
@@ -103,6 +105,8 @@
 		D1CC57C4F260000E14B4D49D /* Pods_foyerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foyerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E264887E3D0091A653F7E89B /* Pods-foyerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foyerTests.release.xcconfig"; path = "Target Support Files/Pods-foyerTests/Pods-foyerTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5E798DD792143966A6A3E93 /* Pods-foyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foyer.release.xcconfig"; path = "Target Support Files/Pods-foyer/Pods-foyer.release.xcconfig"; sourceTree = "<group>"; };
+		E92E42A122C3F31B00BCDF68 /* UserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerTests.swift; sourceTree = "<group>"; };
+		E92E42A322C4ACB200BCDF68 /* story.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = story.jpg; sourceTree = "<group>"; };
 		E94489BE228C0D0D00E49887 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E94489C0228C455D00E49887 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E9473EAC2289C85500AA1CAB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -226,6 +230,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E92E42A022C3F30700BCDF68 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				E92E42A122C3F31B00BCDF68 /* UserViewControllerTests.swift */,
+			);
+			path = viewcontrollers;
+			sourceTree = "<group>";
+		};
 		E9473EAB2289C83500AA1CAB /* custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +267,7 @@
 		E9473EB5228AD09900AA1CAB /* mocks */ = {
 			isa = PBXGroup;
 			children = (
+				E92E42A322C4ACB200BCDF68 /* story.jpg */,
 				E9473EC5228AD59900AA1CAB /* test.png */,
 				E9473EB6228AD0AD00AA1CAB /* Environment.swift */,
 				E94DA645229C3B4600050EC2 /* KeyValueStore.swift */,
@@ -412,6 +425,7 @@
 				E9473EBA228AD20500AA1CAB /* spies */,
 				E9473EB5228AD09900AA1CAB /* mocks */,
 				E9473EB4228AD08D00AA1CAB /* viewmodels */,
+				E92E42A022C3F30700BCDF68 /* viewcontrollers */,
 				E94DA61F2295B6BA00050EC2 /* FoyerClientTests.swift */,
 				E94DA6212295B88900050EC2 /* NetworkerTests.swift */,
 				E9F7623A2280822D00E25BD9 /* Info.plist */,
@@ -546,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9473EC6228AD59900AA1CAB /* test.png in Resources */,
+				E92E42A422C4ACB200BCDF68 /* story.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +610,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -605,6 +621,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapshotTesting.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -733,6 +750,7 @@
 				E9473EC4228AD52400AA1CAB /* UIImage.swift in Sources */,
 				E9473EC0228AD2CA00AA1CAB /* SessionDataTaskSpy.swift in Sources */,
 				E94DA6222295B88900050EC2 /* NetworkerTests.swift in Sources */,
+				E92E42A222C3F31B00BCDF68 /* UserViewControllerTests.swift in Sources */,
 				E9473EB3228AC63500AA1CAB /* FeedViewModelTests.swift in Sources */,
 				E9473EB7228AD0AD00AA1CAB /* Environment.swift in Sources */,
 				E94DA644229C399800050EC2 /* Date.swift in Sources */,

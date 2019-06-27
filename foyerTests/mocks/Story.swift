@@ -5,7 +5,7 @@ extension Story {
     static let mock = Story(
         title: "Test Story",
         cover: .mock,
-        author: .mock,
+        author: .mockWithoutStories,
         createdAt: .mock,
         sections: [.mock]
     )
@@ -14,7 +14,7 @@ extension Story {
 extension Story.Item {
     static let mock = Story.Item(
         objectId: "AbCdEfG",
-        fileUrl: URL(string: "https://google.com/logo.gif"),
+        fileUrl: URL(string: "https://google.com/story.jpg"),
         width: 120,
         height: 120,
         fillRow: false

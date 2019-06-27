@@ -21,6 +21,7 @@ PODS:
     - RxCocoa (>= 4.0.0)
     - RxSwift (>= 4.0.0)
   - SnapKit (5.0.0)
+  - SnapshotTesting (1.5.0)
 
 DEPENDENCIES:
   - RxBlocking (~> 5)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - RxTest (~> 5)
   - RxViewController (~> 0.4)
   - SnapKit (~> 5.0.0)
+  - SnapshotTesting (~> 1.5)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -44,6 +46,7 @@ SPEC REPOS:
     - RxTest
     - RxViewController
     - SnapKit
+    - SnapshotTesting
 
 SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
@@ -56,7 +59,8 @@ SPEC CHECKSUMS:
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
   RxViewController: e93e7c233d5b5b62c32231d69726d55f54081bc6
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SnapshotTesting: 9ca1d80f6322509a035856170c11d0571b1f7171
 
-PODFILE CHECKSUM: 919e705163f683782a39ba617172455bdd9a9b77
+PODFILE CHECKSUM: 8b8efbbdbff5d898d34f4c3397c0c976ce884891
 
 COCOAPODS: 1.6.1

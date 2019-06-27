@@ -15,4 +15,5 @@ target 'foyerTests' do
     pod 'RxCocoa', '~> 5'
     pod 'RxBlocking', '~> 5'
     pod 'RxTest', '~> 5'
+    pod 'SnapshotTesting', '~> 1.5'
 end

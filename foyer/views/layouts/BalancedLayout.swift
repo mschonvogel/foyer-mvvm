@@ -81,7 +81,6 @@ public class BalancedLayout: UICollectionViewFlowLayout
         // Offset for StoryCover
         contentSize.height = storyCoverHeight
 
-        print("prepare layout")
         for section in 0..<numberOfSections {
             let indexPath = IndexPath(item: 0, section: section)
             sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)

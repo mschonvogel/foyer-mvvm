@@ -5,7 +5,7 @@ extension Activity {
     static let mock = Activity(
         createdAt: .mock,
         type: .new,
-        author: .mock,
+        author: .mockWithoutStories,
         story: .mock
     )
 }
